@@ -7,8 +7,8 @@ async function bootstrap() {
   const service = await NestFactory.createMicroservice<MicroserviceOptions>(AppModule, {
     transport: Transport.RMQ,
     options: {
-      urls: [process.env.VQ_HOST],
-      queue: process.env.VQ_NAME,
+      urls: [process.env.MQ_HOST],
+      queue: process.env.MQ_NAME,
       noAck: false,
       queueOptions: {
         durable: true
